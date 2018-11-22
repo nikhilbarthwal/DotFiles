@@ -1,0 +1,12 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.fontSize": 10,
+    "terminal.integrated.fontSize": 11,
+    "workbench.colorCustomizations" : {
+    "terminal.background" :"#000000",
+    "editor.background": "#000000",
+    "sideBar.background" : "#0A0A0A"
+    }
+}
+    
