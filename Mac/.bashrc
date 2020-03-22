@@ -8,7 +8,6 @@ parse_git_branch() {
 }
 
 PS1='\u:\w$(parse_git_branch) \$ '
-
 # Make bash check its window size after a process completes
 shopt -s checkwinsize
 
