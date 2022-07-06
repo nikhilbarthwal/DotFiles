@@ -1,12 +1,37 @@
 {
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
-    "editor.fontSize": 10,
-    "telemetry.enableTelemetry": false,
-    "terminal.integrated.fontSize": 11,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 18,
     "workbench.colorCustomizations" : {
     "terminal.background" :"#000000",
     "editor.background": "#000000",
     "sideBar.background" : "#0A0A0A"
-    }
+    },
+    "terminal.integrated.profiles.windows": {
+        "Cygwin": {
+            "path": "C:\\X\\Cygwin.bat",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Ubuntu (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Ubuntu"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Cygwin"
 }
+
