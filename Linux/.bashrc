@@ -124,12 +124,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-clear
-cal
-echo "  "
-date
-echo "  "
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google-cloud-sdk/path.bash.inc'; fi
@@ -140,3 +134,16 @@ if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google-cloud
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\w\[\033[00m\]\[\033[01;34m\]$(parse_git_branch)\[\033[00m\] \$ '
+alias edit='pluma'
+clear
+cal
+echo "  "
+date
+echo "  "
+
